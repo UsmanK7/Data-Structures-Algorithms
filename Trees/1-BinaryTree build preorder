@@ -10,14 +10,18 @@ public class BinaryTreeP {
 		}
 	}
 	static 	class BinaryTree{
+	//to travel across each index we will use idx
 		static int idx=-1;
 		public static Node buildTree(int nodes[]) {
 			idx++;
+			//-1 represents null node it doesnot has left or right node
 			if(nodes[idx]==-1) {
 				return null;
 			}
 			Node newNode=new Node(nodes[idx]);
+			//first we will create left subtree
 			newNode.left=buildTree(nodes);
+			//then we will create right subtree
 			newNode.right=buildTree(nodes);
 			return newNode;	
 		}
